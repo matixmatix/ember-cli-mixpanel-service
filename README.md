@@ -6,7 +6,7 @@
 
 This ember-cli addon injects mixpanel into your ember app.
 
-The mixpanel js is injected into the app's index.html. Pageview tracking is automatic, no mixins required. The mixpanel service is injected into your apps controllers and routes and is available as `this.mixpanel`.
+The mixpanel js is injected into the app's index.html. Pageview tracking is by default automatic, no mixins required. The mixpanel service is injected into your apps controllers, routes and components and is available as `this.mixpanel`.
 
 This is close port of https://github.com/remerge/ember-cli-mixpanel but refactored as a service.
 
@@ -29,6 +29,7 @@ Add your typekit kitId to `config/environment.js` and you're good to go. A coupl
 
     ENV.mixpanel: {
       enabled: false,
+      automatic_pageview_tracking: true,
       LOG_EVENT_TRACKING: false,
       token: 'abcd123456789'
     }
@@ -38,7 +39,8 @@ Add your typekit kitId to `config/environment.js` and you're good to go. A coupl
 ## Configuration Parameters
 
 * `enabled` (Default: `true`): Enable mixpanel tracking
-* `LOG_EVENT_TRACKING` (Default: `false`): Output logging to the console.
+* `automatic_pageview_tracking` (Default: `true`): Automatically track all route transitions
+* `LOG_EVENT_TRACKING` (Default: `false`): Output logging to the console
 * `token` (Default: `null`): Mandatory mixpanel api token
 
 
